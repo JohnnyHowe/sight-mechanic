@@ -12,7 +12,7 @@ public class Sight : MonoBehaviour
     // for nice inspector
     [SerializeField][Range(0, 2 * Mathf.PI + 0.1f)] private float _directionInRadiansClockwiseFromUp = 0;
     [SerializeField][Range(0, 2 * Mathf.PI + 0.1f)] private float _spreadInRadians = Mathf.PI * 2;
-    private float directionInRadiansClockwiseFromUp => Mathf.Clamp(_directionInRadiansClockwiseFromUp, 0, Mathf.PI * 2);
+    private float directionInRadiansClockwiseFromUp => (float)NormalizeAngle(_directionInRadiansClockwiseFromUp);
     private float spreadInRadians => Mathf.Clamp(_spreadInRadians, 0, Mathf.PI * 2);
 
     [SerializeField] private float radius = 8;
@@ -110,9 +110,6 @@ public class Sight : MonoBehaviour
 
     private bool IsInSightDirection(Vector2 point)
     {
-        var v = point-(Vector2)transform.position;
-        var a = Vector2.SignedAngle(Vector2.up, v);
-        var r = a * Mathf.Deg2Rad;
         return IsInSightDirection(-Mathf.Deg2Rad * Vector2.SignedAngle(Vector2.up, point - (Vector2)transform.position));
     }
 
