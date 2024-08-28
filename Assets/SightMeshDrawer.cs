@@ -2,7 +2,7 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
-public class MeshDrawer : MonoBehaviour
+public class SightMeshDrawer : MonoBehaviour
 {
     private MeshFilter meshFilter;
     private Mesh mesh;

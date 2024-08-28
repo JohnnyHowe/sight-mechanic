@@ -5,7 +5,7 @@ using UnityEngine;
 public class Sight : MonoBehaviour
 {
     [SerializeField] private LayerMask layerMask;
-    [SerializeField] private MeshDrawer meshDrawer;
+    [SerializeField] private SightMeshDrawer meshDrawer;
     [SerializeField] private float radius = 8;
     [SerializeField] private float offsetDistanceFromVertices = 0.01f;
     [SerializeField] private int uniformRays = 16;

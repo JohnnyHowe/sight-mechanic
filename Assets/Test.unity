@@ -1892,7 +1892,7 @@ GameObject:
   - component: {fileID: 1368566925}
   - component: {fileID: 1368566924}
   - component: {fileID: 1368566926}
-  - component: {fileID: 1368566927}
+  - component: {fileID: 1368566929}
   - component: {fileID: 1368566928}
   m_Layer: 0
   m_Name: Source
@@ -1985,22 +1985,10 @@ MonoBehaviour:
   layerMask:
     serializedVersion: 2
     m_Bits: 1
-  meshDrawer: {fileID: 1368566927}
+  meshDrawer: {fileID: 1368566929}
   radius: 64
   offsetDistanceFromVertices: 0.005
   uniformRays: 16
---- !u!114 &1368566927
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1368566923}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 226d3e5cbfc84b1469a53e8e44a8f0b1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1368566928
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2016,6 +2004,18 @@ MonoBehaviour:
   waypointContanier: {fileID: 975503307}
   speed: 4
   lerpSpeed: 4
+--- !u!114 &1368566929
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1368566923}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 226d3e5cbfc84b1469a53e8e44a8f0b1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1427827802
 GameObject:
   m_ObjectHideFlags: 0
