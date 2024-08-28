@@ -64,7 +64,6 @@ public class Sight : MonoBehaviour
         }
 
         Vector2 lookDirection = new Vector2(Mathf.Sin(directionInRadiansClockwiseFromUp), Mathf.Cos(directionInRadiansClockwiseFromUp));
-        Debug.DrawRay(Vector2.zero, lookDirection, Color.magenta);
         float GetAngleRelativeToLookDir(Vector2 dir)
         {
             return Mathf.Deg2Rad * Vector2.SignedAngle(lookDirection, dir);
@@ -146,11 +145,9 @@ public class Sight : MonoBehaviour
         RaycastHit2D hit = Physics2D.Raycast(transform.position, dir, radius);
         if (hit.collider is null)
         {
-            Debug.DrawLine(transform.position, (Vector2)transform.position + dir * radius, Color.red);
             return (Vector2)transform.position + dir * radius;
         }
         lastSeen.Add(hit.collider.gameObject);
-        Debug.DrawLine(transform.position, hit.point, Color.white);
         return hit.point;
     }
 
@@ -181,7 +178,7 @@ public class Sight : MonoBehaviour
         if (sightShape is null) return;
         foreach (Vector2 vertex in sightShape)
         {
-            Gizmos.DrawSphere(vertex, 0.4f);
+            Gizmos.DrawSphere(vertex, 0.1f);
         }
     }
 }
