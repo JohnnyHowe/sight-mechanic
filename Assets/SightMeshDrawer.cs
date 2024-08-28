@@ -22,8 +22,10 @@ public class SightMeshDrawer : MonoBehaviour
 
     public void UpdateVertices(List<Vector2> pointsClockwise)
     {
-        int nFaces = pointsClockwise.Count - 1;
-        mesh.vertices = pointsClockwise.Select(v => (Vector3)v + Vector3.back).ToArray();
+        mesh.Clear();
+        int nPoints = pointsClockwise.Count;
+        int nFaces = nPoints - 1;
+        mesh.SetVertices(pointsClockwise.Select(v => (Vector3)v + Vector3.back).ToArray());
 
         List<int> triangles = new List<int>();
         for (int faceIndex = 1; faceIndex < nFaces; faceIndex++)
@@ -32,9 +34,9 @@ public class SightMeshDrawer : MonoBehaviour
             triangles.Add(faceIndex);
             triangles.Add(0);
         }
-
-        mesh.normals = Enumerable.Repeat(Vector3.back, pointsClockwise.Count).ToArray();
         mesh.triangles = triangles.ToArray();
+
+        mesh.SetNormals(Enumerable.Repeat(Vector3.back, nPoints).ToArray());
         mesh.RecalculateBounds();
     }
 }

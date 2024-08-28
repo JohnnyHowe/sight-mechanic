@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class MoveThroughWayPoints : MonoBehaviour
@@ -23,7 +21,6 @@ public class MoveThroughWayPoints : MonoBehaviour
         UpdateDistance();
         Vector3 targetPosition = Vector3.Lerp(lastWaypoint, nextWaypoint, intraWaypointT);
         transform.position = Vector3.Lerp(transform.position, targetPosition, Time.deltaTime * lerpSpeed);
-        
     }
 
     void UpdateDistance()
