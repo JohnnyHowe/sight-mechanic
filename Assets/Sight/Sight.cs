@@ -36,6 +36,16 @@ public class Sight : MonoBehaviour
         _directionInRadiansClockwiseFromUp = radiansClockwiseFromUp;
     }
 
+    public void SetDirection(Vector2 dir)
+    {
+        SetDirection(-Vector2.SignedAngle(Vector2.up, dir) * Mathf.Deg2Rad);
+    }
+
+    public void SetDirectionByTarget(Vector2 target)
+    {
+        SetDirection(target - (Vector2)transform.position);
+    }
+
     public void SetSpread(float radians)
     {
         _spreadInRadians = radians;
