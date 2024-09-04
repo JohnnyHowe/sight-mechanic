@@ -1986,7 +1986,6 @@ MonoBehaviour:
   seeableLayers:
     serializedVersion: 2
     m_Bits: 1
-  meshDrawer: {fileID: 1368566929}
   _directionInRadiansClockwiseFromUp: 0
   _spreadInRadians: 1.5707965
   radius: 32
@@ -2023,6 +2022,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 226d3e5cbfc84b1469a53e8e44a8f0b1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  material: {fileID: 2100000, guid: 30215ea73268b00458918bde4591a0f3, type: 2}
 --- !u!114 &1368566930
 MonoBehaviour:
   m_ObjectHideFlags: 0

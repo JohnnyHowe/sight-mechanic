@@ -1,13 +1,12 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using Unity.VisualScripting;
 using UnityEngine;
 
+[RequireComponent(typeof(SightMeshDrawer))]
 public class Sight : MonoBehaviour
 {
     [SerializeField] private LayerMask seeableLayers;
-    [SerializeField] private SightMeshDrawer meshDrawer;
 
     // for nice inspector
     [SerializeField][Range(0, 2 * Mathf.PI + 0.1f)] private float _directionInRadiansClockwiseFromUp = 0;
@@ -20,6 +19,12 @@ public class Sight : MonoBehaviour
     [SerializeField] private int uniformRays = 16;
     private HashSet<GameObject> lastSeen = new HashSet<GameObject>();
     private List<Vector2> sightShape = new List<Vector2>();
+    private SightMeshDrawer meshDrawer;
+
+    private void Awake()
+    {
+        meshDrawer = GetComponent<SightMeshDrawer>();
+    }
 
     public IEnumerable<GameObject> GetSeenObjects()
     {

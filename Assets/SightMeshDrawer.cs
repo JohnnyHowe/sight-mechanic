@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class SightMeshDrawer : MonoBehaviour
 {
+    [SerializeField] private Material material;
     private MeshFilter meshFilter;
     private Mesh mesh;
 
@@ -17,7 +18,7 @@ public class SightMeshDrawer : MonoBehaviour
         mesh.name = "MeshDrawer Auto Created Mesh";
         meshFilter.mesh = mesh;
 
-        drawer.AddComponent<MeshRenderer>();
+        drawer.AddComponent<MeshRenderer>().material = material;
     }
 
     public void UpdateVertices(List<Vector2> pointsClockwise)
