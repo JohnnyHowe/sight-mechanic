@@ -147,7 +147,7 @@ public class Sight : MonoBehaviour
     private Vector2 DoRaycast(Vector2 dir)
     {
         dir = dir.normalized;
-        RaycastHit2D hit = Physics2D.Raycast(transform.position, dir, radius);
+        RaycastHit2D hit = Physics2D.Raycast(transform.position, dir, radius, seeableLayers);
         if (hit.collider is null)
         {
             return (Vector2)transform.position + dir * radius;
