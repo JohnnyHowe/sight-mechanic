@@ -193,7 +193,7 @@ public class Sight : MonoBehaviour
         if (sightShape is null) return;
         foreach (Vector2 vertex in sightShape)
         {
-            Gizmos.DrawSphere(vertex, 0.1f);
+            Gizmos.DrawSphere(vertex, 0.01f);
         }
     }
 }
